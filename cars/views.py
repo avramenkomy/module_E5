@@ -20,7 +20,7 @@ def index(request):
             cars = cars.filter(year__lte=form.cleaned_data["max_year"])
         if form.cleaned_data["model"]:
             cars = cars.filter(
-                Q(model=form.cleaned_data["model"])|
+                Q(model__icontains=form.cleaned_data["model"])|
                 Q(manufacturer__title=form.cleaned_data["model"])|
                 Q(manufacturer__title__icontains=form.cleaned_data["model"]))
         if form.cleaned_data["gear"] != "":
