@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="cars.manufacturer" pk="1">
+        <field name="title" type="CharField">Lada (���)</field>
+        <field name="country" type="CharField">Russia</field>
+    </object>
+    <object model="cars.manufacturer" pk="2">
+        <field name="title" type="CharField">Renault</field>
+        <field name="country" type="CharField">France</field>
+    </object>
+    <object model="cars.manufacturer" pk="3">
+        <field name="title" type="CharField">Peugeot</field>
+        <field name="country" type="CharField">France</field>
+    </object>
+    <object model="cars.manufacturer" pk="4">
+        <field name="title" type="CharField">Audi</field>
+        <field name="country" type="CharField">Germany</field>
+    </object>
+    <object model="cars.manufacturer" pk="5">
+        <field name="title" type="CharField">Volkswagen</field>
+        <field name="country" type="CharField">Germany</field>
+    </object>
+    <object model="cars.manufacturer" pk="6">
+        <field name="title" type="CharField">Ford</field>
+        <field name="country" type="CharField">USA</field>
+    </object>
+    <object model="cars.manufacturer" pk="7">
+        <field name="title" type="CharField">Tesla</field>
+        <field name="country" type="CharField">USA</field>
+    </object>
+    <object model="cars.manufacturer" pk="8">
+        <field name="title" type="CharField">Toyota</field>
+        <field name="country" type="CharField">Japan</field>
+    </object>
+    <object model="cars.manufacturer" pk="9">
+        <field name="title" type="CharField">Suzuki</field>
+        <field name="country" type="CharField">Japan</field>
+    </object>
+    <object model="cars.car" pk="1">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">1</field>
+        <field name="model" type="CharField">Vesta</field>
+        <field name="year" type="PositiveIntegerField">2020</field>
+        <field name="gear" type="CharField">MANUAL_GEAR</field>
+        <field name="color" type="CharField">green</field>
+        <field name="photo" type="FileField">cars_photo/lada-vesta-1_W6i733s.jpg</field>
+    </object>
+    <object model="cars.car" pk="2">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">1</field>
+        <field name="model" type="CharField">Vesta SW</field>
+        <field name="year" type="PositiveIntegerField">2019</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">orange</field>
+        <field name="photo" type="FileField">cars_photo/lada-vesta-sw-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="3">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">2</field>
+        <field name="model" type="CharField">Kaptur</field>
+        <field name="year" type="PositiveIntegerField">2019</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">orange</field>
+        <field name="photo" type="FileField">cars_photo/renault-captur-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="4">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">2</field>
+        <field name="model" type="CharField">Sandero Stepway</field>
+        <field name="year" type="PositiveIntegerField">2018</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">black</field>
+        <field name="photo" type="FileField">cars_photo/renault-sandero-stepway-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="5">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">3</field>
+        <field name="model" type="CharField">208</field>
+        <field name="year" type="PositiveIntegerField">2019</field>
+        <field name="gear" type="CharField">ROBOT_GEAR</field>
+        <field name="color" type="CharField">orange</field>
+        <field name="photo" type="FileField">cars_photo/Peugeot-208-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="6">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">3</field>
+        <field name="model" type="CharField">406</field>
+        <field name="year" type="PositiveIntegerField">1998</field>
+        <field name="gear" type="CharField">MANUAL_GEAR</field>
+        <field name="color" type="CharField">white</field>
+        <field name="photo" type="FileField">cars_photo/Peugeot-406-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="7">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">4</field>
+        <field name="model" type="CharField">A4</field>
+        <field name="year" type="PositiveIntegerField">2020</field>
+        <field name="gear" type="CharField">ROBOT_GEAR</field>
+        <field name="color" type="CharField">blue</field>
+        <field name="photo" type="FileField">cars_photo/audi-a4-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="8">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">4</field>
+        <field name="model" type="CharField">Q3 Sportback</field>
+        <field name="year" type="PositiveIntegerField">2020</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">gray</field>
+        <field name="photo" type="FileField"></field>
+    </object>
+    <object model="cars.car" pk="9">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">5</field>
+        <field name="model" type="CharField">polo</field>
+        <field name="year" type="PositiveIntegerField">2006</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">gray</field>
+        <field name="photo" type="FileField">cars_photo/vw-polo-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="10">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">5</field>
+        <field name="model" type="CharField">tiguan</field>
+        <field name="year" type="PositiveIntegerField">2019</field>
+        <field name="gear" type="CharField">MANUAL_GEAR</field>
+        <field name="color" type="CharField">red</field>
+        <field name="photo" type="FileField">cars_photo/vw-tiguan-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="11">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">6</field><
+            field name="model" type="CharField">Ecosport</field>
+        <field name="year" type="PositiveIntegerField">2018</field>
+        <field name="gear" type="CharField">ROBOT_GEAR</field>
+        <field name="color" type="CharField">orange</field>
+        <field name="photo" type="FileField">cars_photo/ford-ecosport-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="12">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">6</field>
+        <field name="model" type="CharField">Focus</field>
+        <field name="year" type="PositiveIntegerField">2010</field>
+        <field name="gear" type="CharField">MANUAL_GEAR</field>
+        <field name="color" type="CharField">gray</field>
+        <field name="photo" type="FileField">cars_photo/ford-focus-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="13">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">7</field>
+        <field name="model" type="CharField">Cybertruck</field>
+        <field name="year" type="PositiveIntegerField">2020</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">gray</field>
+        <field name="photo" type="FileField">cars_photo/tesla-cyber-truck-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="14">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">7</field>
+        <field name="model" type="CharField">Model S</field>
+        <field name="year" type="PositiveIntegerField">2020</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">gray</field>
+        <field name="photo" type="FileField">cars_photo/tesla-model-s-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="15">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">8</field>
+        <field name="model" type="CharField">Camry</field>
+        <field name="year" type="PositiveIntegerField">2020</field>
+        <field name="gear" type="CharField">ROBOT_GEAR</field>
+        <field name="color" type="CharField">black</field>
+        <field name="photo" type="FileField">cars_photo/toyota-camry-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="16">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">8</field>
+        <field name="model" type="CharField">C-HR</field>
+        <field name="year" type="PositiveIntegerField">2019</field>
+        <field name="gear" type="CharField">AUTOMATIC_GEAR</field>
+        <field name="color" type="CharField">gray</field>
+        <field name="photo" type="FileField">cars_photo/toyota-c-hr-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="17">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">9</field>
+        <field name="model" type="CharField">Jimny</field>
+        <field name="year" type="PositiveIntegerField">2018</field>
+        <field name="gear" type="CharField">MANUAL_GEAR</field>
+        <field name="color" type="CharField">green</field>
+        <field name="photo" type="FileField">cars_photo/suzuki-jimny-1.jpg</field>
+    </object>
+    <object model="cars.car" pk="18">
+        <field name="manufacturer" rel="ManyToOneRel" to="cars.manufacturer">9</field>
+        <field name="model" type="CharField">Vitara</field>
+        <field name="year" type="PositiveIntegerField">2019</field>
+        <field name="gear" type="CharField">ROBOT_GEAR</field>
+        <field name="color" type="CharField">yellow</field>
+        <field name="photo" type="FileField">cars_photo/suzuki-vitara-1.jpg</field>
+    </object>
+</django-objects>

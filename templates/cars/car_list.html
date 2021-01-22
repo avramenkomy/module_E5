@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block car_list %}
+    <div class="cars-wrapper" style="display: flex; flex-wrap: wrap">
+        {% for car in car_list %}
+            <div class="car-item" style="display: inline-block; margin: 2px; padding: 2px; border: 1px solid black;">
+                <div class="card">
+                    <a href="/car/{{car.pk}}">
+                        <img width="270" src="{{ MEDIA_URL }}{{ car.small_photo.url }}" alt="{{ car.manufacturer }} {{ car.model }}" class="fit"><br>
+                    </a>
+                    <span>Модель: {{ car.manufacturer }} {{ car.model }}</span><br>
+                    <span>Коробка передач: {{ car.gear }}</span><br>
+                    <span>Год выпуска: {{ car.year }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CarsList</title>
+</head>
+<body>
+    <p>
+        Добро пожаловать на экспозицию автомобилей.<br>
+    </p>
+
+    <div class="cars-wrapper" style="display: flex; flex-wrap: wrap">
+        {% if cars %}
+            {% for car in cars %}
+                <div class="car-item" style="display: inline-block; margin: 2px; padding: 2px; border: 1px solid black;">
+                    <div class="card">
+                        <a href="/car/{{car.pk}}">
+                            <img width="270" src="{{ MEDIA_URL }}{{ car.small_photo.url }}" alt="{{ car.manufacturer }} {{ car.model }}" class="fit"><br>
+                        </a>
+                        <span>Модель: {{ car.manufacturer }} {{ car.model }}</span><br>
+                        <span>Коробка передач: {{ car.gear }}</span><br>
+                        <span>Год выпуска: {{ car.year }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <span>Нет подходящих вариантов. Попробуйте упростить критерии поиска.</span>
+        {% endif %}
+    </div>
+    <h3>Фильтры</h3>
+    <h4>Фильтр детальный</h4>
+    <div class="cars-form-filter">
+        <form action="" method="get">
+            {{ form.as_p }}
+            <input type="submit" value="Фильтр">
+        </form>
+    </div>
+    <h4>Поиск общий</h4>
+    <form action="" method="get">
+        {{ full_form.as_p }}
+        <input type="submit" value="Поиск">
+    </form>
+
+</body>
+</html>
