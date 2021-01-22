@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+</head>
+<body>
+    <div class="card">
+        <img width="550" src="{{ MEDIA_URL }}{{ object.photo.url }}" alt="{{ object.manufacturer }} {{ object.model }}" class="fit"><br>
+        <span>Модель: {{ object.manufacturer }} {{ object.model }}</span><br>
+        <span>Коробка передач: {{ object.gear }}</span><br>
+        <span>Год выпуска: {{ object.year }}</span>
+    </div>
+    <a href="/">На главную</a>
+</body>
+</html>
